@@ -27,25 +27,54 @@ public class EmployeConsole
 			menu.add(changerPrenom(employe));
 			menu.add(changerMail(employe));
 			menu.add(changerPassword(employe));
+			menu.add(changerDateDebut(employe));
+			menu.add(changeDateFin(employe));
 			menu.addBack("q");
 			return menu;
+	}
+
+	private Option changeDateFin(final Employe employe) {
+		return new Option("Changer Date Fin", "f", 
+				() -> {
+					System.out.println("Date Actuel : " + employe.getDatefin());
+					employe.setDatefin(getString("Nouvelle Date (JJ/MM/AAAA) : "));
+					}
+			);
+	}
+
+	private Option changerDateDebut(final Employe employe) {
+		return new Option("Changer Date Debut", "d", 
+				() -> {
+					System.out.println("Date Actuel : " + employe.getDatedebut());
+					employe.setDatedebut(getString("Nouvelle Date (JJ/MM/AAAA) : "));
+					}
+			);
 	}
 
 	private Option changerNom(final Employe employe)
 	{
 		return new Option("Changer le nom", "n", 
-				() -> {employe.setNom(getString("Nouveau nom : "));}
+				() -> {
+					System.out.println("Nom actuel : " + employe.getNom());
+					employe.setNom(getString("Nouveau nom : "));
+					}
 			);
 	}
 	
 	private Option changerPrenom(final Employe employe)
 	{
-		return new Option("Changer le prénom", "p", () -> {employe.setPrenom(getString("Nouveau prénom : "));});
+		return new Option("Changer le prénom", "p", () -> {
+			System.out.println("Prénom actuel : " + employe.getPrenom());
+			employe.setPrenom(getString("Nouveau prénom : "));
+			});
 	}
 	
 	private Option changerMail(final Employe employe)
 	{
-		return new Option("Changer le mail", "e", () -> {employe.setMail(getString("Nouveau mail : "));});
+		return new Option("Changer le mail", "e", () -> {
+			System.out.println("Mail actuel : " + employe.getMail());
+			employe.setMail(getString("Nouveau mail : "));
+			});
 	}
 	
 	private Option changerPassword(final Employe employe)
