@@ -36,14 +36,14 @@ public class EmployeConsole
 	private Option changeDateFin(final Employe employe) {
 		return new Option("Changer Date Fin", "f", 
 				() -> {
-					System.out.println("Date Actuel : " + employe.getDatefin());
+					System.out.println("Date Arrivé : " + employe.getDatefin());
 					employe.setDatefin(getString("Nouvelle Date (JJ/MM/AAAA) : "));
 					}
 			);
 	}
 
 	private Option changerDateDebut(final Employe employe) {
-		return new Option("Changer Date Debut", "d", 
+		return new Option("Changer Date Départ", "d", 
 				() -> {
 					System.out.println("Date Actuel : " + employe.getDatedebut());
 					employe.setDatedebut(getString("Nouvelle Date (JJ/MM/AAAA) : "));

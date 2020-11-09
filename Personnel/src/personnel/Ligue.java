@@ -105,12 +105,14 @@ public class Ligue implements Serializable, Comparable<Ligue>
 	 * @param prenom le prénom de l'employé.
 	 * @param mail l'adresse mail de l'employé.
 	 * @param password le password de l'employé.
+	 * @param datefin 
+	 * @param datedebut 
 	 * @return l'employé créé. 
 	 */
 
-	public Employe addEmploye(String nom, String prenom, String mail, String password)
+	public Employe addEmploye(String nom, String prenom, String mail, String datedebut, String datefin, String password)
 	{
-		Employe employe = new Employe(this.gestionPersonnel, this, nom, prenom, mail, password, null, null);
+		Employe employe = new Employe(this.gestionPersonnel, this, nom, prenom, mail, password, datedebut, datefin);
 		employes.add(employe);
 		return employe;
 	}

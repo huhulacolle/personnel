@@ -26,7 +26,7 @@ public class Employe implements Serializable, Comparable<Employe>
 		this.mail = mail;
 		this.ligue = ligue;
 		this.datedebut = datedebut;
-		this.datedebut = datefin;
+		this.datefin = datefin;
 	}
 	
 	/**
@@ -112,7 +112,7 @@ public class Employe implements Serializable, Comparable<Employe>
 	{
 		this.mail = mail;
 	}
-
+	
 	/**
 	 * Retourne vrai ssi le password passé en paramètre est bien celui
 	 * de l'employé.
@@ -120,6 +120,22 @@ public class Employe implements Serializable, Comparable<Employe>
 	 * de l'employé.
 	 * @param password le password auquel comparer celui de l'employé.
 	 */
+	
+	public String getDatedebut() {
+		return datedebut;
+	}
+
+	public void setDatedebut(String datedebut) {
+		this.datedebut = datedebut;
+	}
+
+	public String getDatefin() {
+		return datefin;
+	}
+
+	public void setDatefin(String datefin) {
+		this.datefin = datefin;
+	}
 	
 	public boolean checkPassword(String password)
 	{
@@ -176,7 +192,7 @@ public class Employe implements Serializable, Comparable<Employe>
 	@Override
 	public String toString()
 	{
-		String res = nom + " " + prenom + " " + mail + " (";
+		String res = nom + " " + prenom + " " + mail + " " + datedebut + " " + datefin + " " + password + " (";
 		if (estRoot())
 			res += "super-utilisateur";
 		else
@@ -184,19 +200,4 @@ public class Employe implements Serializable, Comparable<Employe>
 		return res + ")";
 	}
 
-	public String getDatedebut() {
-		return datedebut;
-	}
-
-	public void setDatedebut(String datedebut) {
-		this.datedebut = datedebut;
-	}
-
-	public String getDatefin() {
-		return datefin;
-	}
-
-	public void setDatefin(String datefin) {
-		this.datefin = datefin;
-	}
 }
