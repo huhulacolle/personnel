@@ -1,6 +1,7 @@
 package testsUnitaires;
 
 import static commandLineMenus.rendering.examples.util.InOut.getString;
+import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
@@ -30,11 +31,19 @@ class testLigue
 	}
 	
 	@Test
+	void delEmploye() throws SauvegardeImpossible 
+	{
+		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
+		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "01/01/2020", "02/02/2021", "azerty"); 
+		employe.remove();
+		assertFalse(ligue.getEmployes().contains(employe));
+	}
+	
+	@Test
 	void modifEmploye() throws SauvegardeImpossible 
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "01/01/2020", "02/02/2021", "azerty"); 
-		System.out.println(employe);
 		employe.setNom("Bouchard2");
 		employe.setPrenom("Gérard2");
 		employe.setMail("rule@34.com");
