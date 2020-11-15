@@ -21,6 +21,14 @@ class testLigue
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		assertEquals("Fléchettes", ligue.getNom());
 	}
+	
+	@Test
+	void modifLigue() throws SauvegardeImpossible 
+	{
+		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
+		ligue.setNom("Flech");
+		assertEquals("Flech", ligue.getNom());
+	}
 
 	@Test
 	void addEmploye() throws SauvegardeImpossible
