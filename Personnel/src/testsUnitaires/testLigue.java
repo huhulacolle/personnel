@@ -54,7 +54,7 @@ class testLigue
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "01/01/2020", "02/02/2021", "azerty"); 
 		employe.setNom("Bouchard2");
 		employe.setPrenom("Gérard2");
-		employe.setMail("rule@34.com");
+		employe.setMail("richard@35.com");
 		employe.setDatedebut("01/01/2001");
 		employe.setDatefin("02/02/2002");
 		employe.setPassword("qwerty");
