@@ -1,7 +1,6 @@
 package personnel;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 /**
  * Employé d'une ligue hébergée par la M2L. Certains peuvent 
@@ -14,12 +13,11 @@ import java.time.LocalDate;
 public class Employe implements Serializable, Comparable<Employe>
 {
 	private static final long serialVersionUID = 4795721718037994734L;
-	private String nom, prenom, password, mail;
-	private LocalDate dateDebut, dateFin;
+	private String nom, prenom, password, mail, datedebut, datefin;
 	private Ligue ligue;
 	private GestionPersonnel gestionPersonnel;
 	
-	Employe(GestionPersonnel gestionPersonnel, Ligue ligue, String nom, String prenom, String mail, String password, LocalDate dateDebut)
+	Employe(GestionPersonnel gestionPersonnel, Ligue ligue, String nom, String prenom, String mail, String password, String datedebut, String datefin)
 	{
 		this.gestionPersonnel = gestionPersonnel;
 		this.nom = nom;
@@ -27,7 +25,8 @@ public class Employe implements Serializable, Comparable<Employe>
 		this.password = password;
 		this.mail = mail;
 		this.ligue = ligue;
-		this.dateDebut = dateDebut;
+		this.datedebut = datedebut;
+		this.datefin = datefin;
 	}
 	
 	/**
@@ -122,20 +121,20 @@ public class Employe implements Serializable, Comparable<Employe>
 	 * @param password le password auquel comparer celui de l'employé.
 	 */
 	
-	public LocalDate getDateDebut() {
-		return dateDebut;
+	public String getDatedebut() {
+		return datedebut;
 	}
 
-	public void setDateDebut(String datedebut) {
-		this.dateDebut = LocalDate.parse(datedebut);
+	public void setDatedebut(String datedebut) {
+		this.datedebut = datedebut;
 	}
 
-	public LocalDate getDateFin() {
-		return dateFin;
+	public String getDatefin() {
+		return datefin;
 	}
 
-	public void setDateFin(String localDate) {
-		this.dateFin = LocalDate.parse(localDate);
+	public void setDatefin(String datefin) {
+		this.datefin = datefin;
 	}
 	
 	public boolean checkPassword(String password)
@@ -193,7 +192,7 @@ public class Employe implements Serializable, Comparable<Employe>
 	@Override
 	public String toString()
 	{
-		String res = nom + " " + prenom + " " + mail + " " + dateDebut + " " + dateFin + " " + password + " (";
+		String res = nom + " " + prenom + " " + mail + " " + datedebut + " " + datefin + " " + password + " (";
 		if (estRoot())
 			res += "super-utilisateur";
 		else
