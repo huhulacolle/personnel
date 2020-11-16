@@ -34,7 +34,7 @@ class testLigue
 	void addEmploye() throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
-		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "01-01-2020", "02-02-2021", "azerty"); 
+		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "01/01/2020", "02/02/2021", "azerty"); 
 		assertEquals(employe, ligue.getEmployes().first());
 	}
 	
@@ -42,7 +42,7 @@ class testLigue
 	void delEmploye() throws SauvegardeImpossible 
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
-		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "01-01-2020", "02-02-2021", "azerty"); 
+		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "01/01/2020", "02/02/2021", "azerty"); 
 		employe.remove();
 		assertFalse(ligue.getEmployes().contains(employe));
 	}
@@ -51,12 +51,12 @@ class testLigue
 	void modifEmploye() throws SauvegardeImpossible 
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
-		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "01-01-2020", "02-02-2021", "azerty"); 
+		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "01/01/2020", "02/02/2021", "azerty"); 
 		employe.setNom("Bouchard2");
 		employe.setPrenom("Gérard2");
 		employe.setMail("richard@35.com");
-		employe.setDatedebut("2001-01-01");
-		employe.setDatefin("2002-02-02");
+		employe.setDatedebut("01/01/2001");
+		employe.setDatefin("02/02/2002");
 		employe.setPassword("qwerty");
 		assertEquals(employe, ligue.getEmployes().first());
 	}
