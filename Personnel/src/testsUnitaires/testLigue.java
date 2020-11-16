@@ -23,26 +23,26 @@ class testLigue
 	}
 	
 	@Test
-	void modifLigue() throws SauvegardeImpossible 
-	{
-		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
-		ligue.setNom("Flech");
-		assertEquals("Flech", ligue.getNom());
-	}
-	
-	@Test
 	void delLigue() throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		gestionPersonnel.remove(ligue);
 		assertEquals(gestionPersonnel.hasLigue(ligue),false);
 	}
+	
+	@Test
+	void modifLigue() throws SauvegardeImpossible 
+	{
+		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
+		ligue.setNom("Flech");
+		assertEquals("Flech", ligue.getNom());
+	}
 
 	@Test
 	void addEmploye() throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
-		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "2010-01-01", "2021-21-21", "azerty"); 
+		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "2020-09-09", "2030-06-06", "azerty"); 
 		assertEquals(employe, ligue.getEmployes().first());
 	}
 	
@@ -50,7 +50,7 @@ class testLigue
 	void delEmploye() throws SauvegardeImpossible 
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
-		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "2010-01-01", "2021-21-21", "azerty"); 
+		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "2020-01-08", "2021-06-06", "azerty"); 
 		employe.remove();
 		assertFalse(ligue.getEmployes().contains(employe));
 	}
@@ -59,12 +59,12 @@ class testLigue
 	void modifEmploye() throws SauvegardeImpossible 
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
-		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "2010-01-01", "2021-21-21", "azerty"); 
+		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "2010-09-09", "2020-10-01", "azerty"); 
 		employe.setNom("Bouchard2");
 		employe.setPrenom("Gérard2");
 		employe.setMail("richard@35.com");
-		employe.setDatedebut("2001-01-01");
-		employe.setDatefin("2002-02-02");
+		employe.setDateDebut("2002-02-02");
+		employe.setDateFin("2002-06-09");
 		employe.setPassword("qwerty");
 		assertEquals(employe, ligue.getEmployes().first());
 	}
