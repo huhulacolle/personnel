@@ -23,6 +23,14 @@ class testLigue
 	}
 	
 	@Test
+	void delLigue() throws SauvegardeImpossible
+	{
+		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
+		gestionPersonnel.remove(ligue);
+		assertEquals(gestionPersonnel.hasLigue(ligue),false);
+	}
+	
+	@Test
 	void modifLigue() throws SauvegardeImpossible 
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
@@ -42,7 +50,7 @@ class testLigue
 	void delEmploye() throws SauvegardeImpossible 
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
-		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "01/01/2020", "02/02/2021", "azerty"); 
+		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "2020/01/01", "2021/02/02", "azerty"); 
 		employe.remove();
 		assertFalse(ligue.getEmployes().contains(employe));
 	}
@@ -55,8 +63,8 @@ class testLigue
 		employe.setNom("Bouchard2");
 		employe.setPrenom("Gérard2");
 		employe.setMail("richard@35.com");
-		employe.setDatedebut("01/01/2001");
-		employe.setDatefin("02/02/2002");
+		employe.setDateDebut("2002-02-02");
+		employe.setDateFin("2002-06-09");
 		employe.setPassword("qwerty");
 		assertEquals(employe, ligue.getEmployes().first());
 	}
