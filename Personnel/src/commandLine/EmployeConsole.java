@@ -38,8 +38,12 @@ public class EmployeConsole
 	private Option changeDateFin(final Employe employe) {
 		return new Option("Changer Date départ", "f", 
 				() -> {
-					System.out.println("Date de départ actuel : " + employe.getDateFin());
-					employe.setDateFin(getString("Nouvelle Date de départ : "));
+					try {
+						System.out.println("Date de départ actuel : " + employe.getDateFin());
+						employe.setDateFin(getString("Nouvelle Date de départ : "));
+					} catch (Exception e) {
+						System.out.println("il y a une erreur dans la saisie de la date veuillez recommencer");
+					}
 					}
 			);
 	}
@@ -47,8 +51,12 @@ public class EmployeConsole
 	private Option changerDateDebut(final Employe employe) {
 		return new Option("Changer Date d'arrivée", "d", 
 				() -> {
-					System.out.println("Date d'arrivée actuel : " + employe.getDateDebut());
+					try {
+						System.out.println("Date d'arrivée actuel : " + employe.getDateDebut());
 						employe.setDateDebut(getString("Nouvelle Date d'arrivée :"));
+					} catch (Exception e) {
+						System.out.println("il y a une erreur dans la saisie de la date veuillez recommencer");
+					}
 					}
 			);
 	}
