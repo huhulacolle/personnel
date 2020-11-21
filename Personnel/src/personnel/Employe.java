@@ -143,7 +143,7 @@ public class Employe implements Serializable, Comparable<Employe>
 	{
 		return this.password.equals(password);
 	}
-
+	
 	/**
 	 * Change le password de l'employé.
 	 * @param password le nouveau password de l'employé. 
