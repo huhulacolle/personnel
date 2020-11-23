@@ -13,7 +13,7 @@ public class EmployeConsole
 {
 	private Option afficher(final Employe employe)
 	{
-		return new Option("Afficher l'employï¿½", "l", () -> {System.out.println(employe);});
+		return new Option("Afficher l'employé", "l", () -> {System.out.println(employe);});
 	}
 
 	ListOption<Employe> editerEmploye()
@@ -23,7 +23,7 @@ public class EmployeConsole
 
 	Option editerEmploye(Employe employe)
 	{
-			Menu menu = new Menu("Gï¿½rer le compte " + employe.getNom(), "c");
+			Menu menu = new Menu("Gérer le compte " + employe.getNom(), "c");
 			menu.add(afficher(employe));
 			menu.add(ModifierEmploye(employe));
 			menu.add(SupprimerEmploye(employe));
@@ -39,7 +39,7 @@ public class EmployeConsole
 	
 	Option modifEmploye(Employe employe)
 	{
-		Menu menu = new Menu("Gï¿½rer le compte " + employe.getNom(), "k");
+		Menu menu = new Menu("Gérer le compte " + employe.getNom(), "k");
 		menu.add(changerNom(employe));
 		menu.add(changerPrenom(employe));
 		menu.add(changerMail(employe));
@@ -68,7 +68,7 @@ public class EmployeConsole
 		return new Option("Changer Date départ", "f", 
 				() -> {
 					try {
-						System.out.println("Date de dï¿½part actuel : " + employe.getDateFin());
+						System.out.println("Date de départ actuel : " + employe.getDateFin());
 						employe.setDateFin(LocalDate.parse(getString("Nouvelle Date de départ : ")));
 					} catch (Exception e) {
 						System.out.println("il y a une erreur dans la saisie de la date veuillez recommencer");
