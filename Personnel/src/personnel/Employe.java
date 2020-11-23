@@ -133,8 +133,8 @@ public class Employe implements Serializable, Comparable<Employe>
 		return dateFin;
 	}
 
-	public void setDateFin(LocalDate dateFin) {
-		this.dateFin = dateFin;
+	public void setDateFin(LocalDate datefin) {
+		this.dateFin = datefin;
 	}
 	
 	public boolean checkPassword(String password)

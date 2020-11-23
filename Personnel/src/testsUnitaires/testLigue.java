@@ -43,7 +43,7 @@ class testLigue
 	void addEmploye() throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
-		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "2020-09-09", "2030-06-06", "azerty"); 
+		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", LocalDate.parse("2020-09-09"), LocalDate.parse("2030-06-06"), "azerty"); 
 		assertEquals(employe, ligue.getEmployes().first());
 	}
 	
@@ -51,7 +51,7 @@ class testLigue
 	void delEmploye() throws SauvegardeImpossible 
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
-		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "2020-01-08", "2021-06-06", "azerty"); 
+		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", LocalDate.parse("2020-01-08"), LocalDate.parse("2021-06-06"), "azerty"); 
 		employe.remove();
 		assertFalse(ligue.getEmployes().contains(employe));
 	}
@@ -60,7 +60,7 @@ class testLigue
 	void modifEmploye() throws SauvegardeImpossible, ErreurDateDepart 
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
-		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "2010-09-09", "2020-10-01", "azerty"); 
+		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", LocalDate.parse("2010-09-09"), LocalDate.parse("2020-10-01"), "azerty"); 
 		employe.setNom("Bouchard2");
 		employe.setPrenom("Gérard2");
 		employe.setMail("richard@35.com");
