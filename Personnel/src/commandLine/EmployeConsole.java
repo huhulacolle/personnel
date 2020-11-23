@@ -25,36 +25,15 @@ public class EmployeConsole
 	{
 			Menu menu = new Menu("Gérer le compte " + employe.getNom(), "c");
 			menu.add(afficher(employe));
-			menu.add(ModifierEmploye(employe));
+			menu.add(changerNom(employe));
+			menu.add(changerPrenom(employe));
+			menu.add(changerMail(employe));
+			menu.add(changerPassword(employe));
+			menu.add(changerDateDebut(employe));
+			menu.add(changeDateFin(employe));
 			menu.add(SupprimerEmploye(employe));
-//			menu.add(changerNom(employe));
-//			menu.add(changerPrenom(employe));
-//			menu.add(changerMail(employe));
-//			menu.add(changerPassword(employe));
-//			menu.add(changerDateDebut(employe));
-//			menu.add(changeDateFin(employe));
 			menu.addBack("q");
 			return menu;
-	}
-	
-	Option modifEmploye(Employe employe)
-	{
-		Menu menu = new Menu("Gérer le compte " + employe.getNom(), "k");
-		menu.add(changerNom(employe));
-		menu.add(changerPrenom(employe));
-		menu.add(changerMail(employe));
-		menu.add(changerPassword(employe));
-		menu.add(changerDateDebut(employe));
-		menu.add(changeDateFin(employe));
-		return menu;
-		
-	}
-	
-	private Option ModifierEmploye(final Employe employe)
-	{
-		return new Option("Modifier un employe", "m", () -> {
-			modifEmploye(employe);
-			});
 	}
 	
 	private Option SupprimerEmploye(final Employe employe)
