@@ -57,7 +57,7 @@ class testLigue
 	}
 	
 	@Test
-	void modifEmploye() throws SauvegardeImpossible 
+	void modifEmploye() throws SauvegardeImpossible, ErreurDateDepart 
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "2010-09-09", "2020-10-01", "azerty"); 
