@@ -133,8 +133,11 @@ public class Employe implements Serializable, Comparable<Employe>
 		return dateFin;
 	}
 
-	public void setDateFin(LocalDate localDate) {
-		this.dateFin = dateFin;
+	public void setDateFin(LocalDate localDate) throws ErreurDateDepart {
+		if(dateFin.isBefore(dateDebut))
+			throw new ErreurDateDepart();
+		else
+			this.dateFin = dateFin;
 	}
 	
 	public boolean checkPassword(String password)

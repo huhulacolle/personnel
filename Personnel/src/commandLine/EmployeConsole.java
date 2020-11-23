@@ -65,11 +65,11 @@ public class EmployeConsole
 	}
 
 	private Option changeDateFin(final Employe employe) {
-		return new Option("Changer Date dï¿½part", "f", 
+		return new Option("Changer Date départ", "f", 
 				() -> {
 					try {
 						System.out.println("Date de dï¿½part actuel : " + employe.getDateFin());
-						employe.setDateFin(LocalDate.parse(getString("Nouvelle Date de dï¿½part : ")));
+						employe.setDateFin(LocalDate.parse(getString("Nouvelle Date de départ : ")));
 					} catch (Exception e) {
 						System.out.println("il y a une erreur dans la saisie de la date veuillez recommencer");
 					}
@@ -78,11 +78,11 @@ public class EmployeConsole
 	}
 
 	private Option changerDateDebut(final Employe employe) {
-		return new Option("Changer Date d'arrivï¿½e", "d", 
+		return new Option("Changer Date d'arrivée", "d", 
 				() -> {
 					try {
-						System.out.println("Date d'arrivï¿½e actuel : " + employe.getDateDebut());
-						employe.setDateDebut(LocalDate.parse(getString("Nouvelle Date d'arrivï¿½e :")));
+						System.out.println("Date d'arrivée actuel : " + employe.getDateDebut());
+						employe.setDateDebut(LocalDate.parse(getString("Nouvelle Date d'arrivée :")));
 					} catch (Exception e) {
 						System.out.println("il y a une erreur dans la saisie de la date veuillez recommencer");
 					}
@@ -102,9 +102,9 @@ public class EmployeConsole
 	
 	private Option changerPrenom(final Employe employe)
 	{
-		return new Option("Changer le prï¿½nom", "p", () -> {
-			System.out.println("Prï¿½nom actuel : " + employe.getPrenom());
-			employe.setPrenom(getString("Nouveau prï¿½nom : "));
+		return new Option("Changer le prénom", "p", () -> {
+			System.out.println("Prénom actuel : " + employe.getPrenom());
+			employe.setPrenom(getString("Nouveau prénom : "));
 			});
 	}
 	
