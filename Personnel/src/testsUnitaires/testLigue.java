@@ -4,6 +4,7 @@ import static commandLineMenus.rendering.examples.util.InOut.getString;
 import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import org.junit.Before;
@@ -63,8 +64,7 @@ class testLigue
 		employe.setNom("Bouchard2");
 		employe.setPrenom("Gérard2");
 		employe.setMail("richard@35.com");
-		employe.setDateDebut("2002-02-02");
-		employe.setDateFin("2002-06-09");
+		employe.setDateDebut(LocalDate.parse("2002-02-02"));
 		employe.setPassword("qwerty");
 		assertEquals(employe, ligue.getEmployes().first());
 	}

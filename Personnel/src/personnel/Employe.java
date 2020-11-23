@@ -19,7 +19,7 @@ public class Employe implements Serializable, Comparable<Employe>
 	private Ligue ligue;
 	private GestionPersonnel gestionPersonnel;
 	
-	Employe(GestionPersonnel gestionPersonnel, Ligue ligue, String nom, String prenom, String mail, String password, String datedebut, String datefin)
+	Employe(GestionPersonnel gestionPersonnel, Ligue ligue, String nom, String prenom, String mail, String password)
 	{
 		this.gestionPersonnel = gestionPersonnel;
 		this.nom = nom;
@@ -27,8 +27,6 @@ public class Employe implements Serializable, Comparable<Employe>
 		this.password = password;
 		this.mail = mail;
 		this.ligue = ligue;
-		this.dateDebut = LocalDate.parse(datedebut);
-		this.dateFin = LocalDate.parse(datefin);
 	}
 	
 	/**
@@ -127,16 +125,16 @@ public class Employe implements Serializable, Comparable<Employe>
 		return dateDebut;
 	}
 
-	public void setDateDebut(String datedebut) {
-		this.dateDebut = LocalDate.parse(datedebut);
+	public void setDateDebut(LocalDate datedebut) {
+		this.dateDebut = datedebut;
 	}
 
 	public LocalDate getDateFin() {
 		return dateFin;
 	}
 
-	public void setDateFin(String localDate) {
-		this.dateFin = LocalDate.parse(localDate);
+	public void setDateFin(LocalDate localDate) {
+		this.dateFin = dateFin;
 	}
 	
 	public boolean checkPassword(String password)

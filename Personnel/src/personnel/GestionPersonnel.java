@@ -21,7 +21,7 @@ public class GestionPersonnel implements Serializable
 	private static final long serialVersionUID = -105283113987886425L;
 	private static GestionPersonnel gestionPersonnel = null;
 	private SortedSet<Ligue> ligues;
-	private Employe root = new Employe(this, null, "root", "", "", "toor","2000-01-01","9999-09-09");
+	private Employe root = new Employe(this, null, "root", "", "", "toor");
 	public final static int SERIALIZATION = 1, JDBC = 2, 
 			TYPE_PASSERELLE = SERIALIZATION; 
 	private static Passerelle passerelle = TYPE_PASSERELLE == JDBC ? new jdbc.JDBC() : new serialisation.Serialization();	

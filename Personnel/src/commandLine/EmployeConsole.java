@@ -69,7 +69,7 @@ public class EmployeConsole
 				() -> {
 					try {
 						System.out.println("Date de d�part actuel : " + employe.getDateFin());
-						employe.setDateFin(getString("Nouvelle Date de d�part : "));
+						employe.setDateFin(LocalDate.parse(getString("Nouvelle Date de d�part : ")));
 					} catch (Exception e) {
 						System.out.println("il y a une erreur dans la saisie de la date veuillez recommencer");
 					}
@@ -82,7 +82,7 @@ public class EmployeConsole
 				() -> {
 					try {
 						System.out.println("Date d'arriv�e actuel : " + employe.getDateDebut());
-						employe.setDateDebut(getString("Nouvelle Date d'arriv�e :"));
+						employe.setDateDebut(LocalDate.parse(getString("Nouvelle Date d'arriv�e :")));
 					} catch (Exception e) {
 						System.out.println("il y a une erreur dans la saisie de la date veuillez recommencer");
 					}
