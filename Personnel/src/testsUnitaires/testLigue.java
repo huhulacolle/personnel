@@ -68,4 +68,13 @@ class testLigue
 		employe.setPassword("qwerty");
 		assertEquals(employe, ligue.getEmployes().first());
 	}
+	
+	@Test
+	void changeAdmin() throws SauvegardeImpossible
+	{
+		Ligue ligue = gestionPersonnel.addLigue("Flechettes");
+		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com",LocalDate.parse("2010-09-09"), LocalDate.parse("2020-10-01"), "azerty");
+		ligue.setAdministrateur(employe);
+		assertEquals(employe,ligue.getAdministrateur());
+	}
 }
