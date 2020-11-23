@@ -74,7 +74,6 @@ public class LigueConsole
 		menu.add(changerNom(ligue));
 		menu.add(supprimer(ligue));
 		menu.add(gererEmployes(ligue));
-		menu.add(changerAdministrateur(ligue));
 		menu.addBack("q");
 		return menu;
 	}
@@ -116,7 +115,7 @@ public class LigueConsole
 		menu.add(afficherEmployes(ligue));
 		menu.add(ajouterEmploye(ligue));
 		menu.add(selectionnerEmploye(ligue));
-//		menu.add(supprimerEmploye(ligue));
+		menu.add(changerAdministrateur(ligue));
 		menu.addBack("q");
 		return menu;
 	}
