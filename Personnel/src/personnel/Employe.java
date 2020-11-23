@@ -125,16 +125,26 @@ public class Employe implements Serializable, Comparable<Employe>
 		return dateDebut;
 	}
 
-	public void setDateDebut(LocalDate datedebut) {
-		this.dateDebut = datedebut;
+	public void setDateDebut(LocalDate datedebut) throws ErreurDateDepart {
+		if(dateFin == null)
+			this.dateDebut = datedebut;
+		else if(datedebut.isAfter(dateFin))
+			throw new ErreurDateDepart();
+		else
+			this.dateDebut = datedebut;
 	}
 
 	public LocalDate getDateFin() {
 		return dateFin;
 	}
 
-	public void setDateFin(LocalDate datefin) {
-		this.dateFin = datefin;
+	public void setDateFin(LocalDate datefin) throws ErreurDateDepart {
+		if(dateDebut ==null )
+			this.dateFin = datefin;
+		else if(datefin.isBefore(dateDebut))
+			throw new ErreurDateDepart();
+		else
+			this.dateFin = datefin;
 	}
 	
 	public boolean checkPassword(String password)

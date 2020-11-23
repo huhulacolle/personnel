@@ -100,10 +100,10 @@ public class LigueConsole
 					try {
 						ligue.addEmploye(getString("nom : "), 
 								getString("prenom : "), getString("mail : "), 
-								LocalDate.parse(getString("date de départ (AAAA-MM-JJ) : ")), 
-								LocalDate.parse(getString("date d'arrivé (AAAA-MM-JJ) : ")), getString("password : "));
+								LocalDate.parse(getString("date d'arrivé  (AAAA-MM-JJ) : ")), 
+								LocalDate.parse(getString("date de départ (AAAA-MM-JJ) : ")), getString("password : "));
 					} catch (Exception e) {
-						System.out.println("il y a une erreur dans la saisie d'une des deux dates veuillez recommencer");
+						
 					}
 				}
 		);
