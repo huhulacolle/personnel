@@ -117,12 +117,12 @@ public class Ligue implements Serializable, Comparable<Ligue>
 		try {
 			employe.setDateDebut(dateDebut);
 		} catch (ErreurDateDepart e) {
-			e.printStackTrace();
+			System.err.println(e);
 		}
 		try {
 			employe.setDateFin(dateFin);
-		} catch (ErreurDateDepart e) {
-			e.printStackTrace();
+		} catch (ErreurDateFin e) {
+			System.err.println(e);
 		}
 		employes.add(employe);
 		return employe;

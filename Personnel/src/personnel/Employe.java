@@ -138,11 +138,11 @@ public class Employe implements Serializable, Comparable<Employe>
 		return dateFin;
 	}
 
-	public void setDateFin(LocalDate datefin) throws ErreurDateDepart {
+	public void setDateFin(LocalDate datefin) throws ErreurDateFin {
 		if(dateDebut ==null )
 			this.dateFin = datefin;
 		else if(datefin.isBefore(dateDebut))
-			throw new ErreurDateDepart();
+			throw new ErreurDateFin();
 		else
 			this.dateFin = datefin;
 	}
