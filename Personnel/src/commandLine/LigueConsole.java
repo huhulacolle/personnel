@@ -24,7 +24,7 @@ public class LigueConsole
 
 	Menu menuLigues()
 	{
-		Menu menu = new Menu("Gï¿½rer les ligues", "l");
+		Menu menu = new Menu("Gérer les ligues", "l");
 		menu.add(afficherLigues());
 		menu.add(ajouterLigue());
 		menu.add(selectionnerLigue());
@@ -43,7 +43,7 @@ public class LigueConsole
 				() -> 
 				{
 					System.out.println(ligue);
-					System.out.println("administrï¿½e par " + ligue.getAdministrateur());
+					System.out.println("administrée par " + ligue.getAdministrateur());
 				}
 		);
 	}
@@ -86,7 +86,7 @@ public class LigueConsole
 
 	private List<Ligue> selectionnerLigue()
 	{
-		return new List<Ligue>("Sï¿½lectionner une ligue", "e", 
+		return new List<Ligue>("Sélectionner une ligue", "e", 
 				() -> new ArrayList<>(gestionPersonnel.getLigues()),
 				(element) -> editerLigue(element)
 				);
@@ -94,14 +94,14 @@ public class LigueConsole
 	
 	private Option ajouterEmploye(final Ligue ligue)
 	{
-		return new Option("ajouter un employï¿½", "a",
+		return new Option("ajouter un employé", "a",
 				() -> 
 				{
 					try {
 						ligue.addEmploye(getString("nom : "), 
 								getString("prenom : "), getString("mail : "), 
-								LocalDate.parse(getString("date d'arrivï¿½  (AAAA-MM-JJ) : ")), 
-								LocalDate.parse(getString("date de dï¿½part (AAAA-MM-JJ) : ")), getString("password : "));
+								LocalDate.parse(getString("date d'arrivé  (AAAA-MM-JJ) : ")), 
+								LocalDate.parse(getString("date de départ (AAAA-MM-JJ) : ")), getString("password : "));
 					} catch (Exception e) {
 						System.out.println("erreur de format dans l'insertion de la date");
 					}
@@ -111,7 +111,7 @@ public class LigueConsole
 	
 	private Menu gererEmployes(Ligue ligue)
 	{
-		Menu menu = new Menu("Gï¿½rer les employï¿½s de " + ligue.getNom(), "e");
+		Menu menu = new Menu("Gérer les employés de " + ligue.getNom(), "e");
 		menu.add(afficherEmployes(ligue));
 		menu.add(ajouterEmploye(ligue));
 		menu.add(selectionnerEmploye(ligue));
@@ -122,7 +122,7 @@ public class LigueConsole
 	
 	private List<Employe> selectionnerEmploye(final Ligue ligue)
 	{
-		return new List<>("Selectionne un employe", "s", 
+		return new List<>("Selectionne un employe", "e", 
 				() -> new ArrayList<>(ligue.getEmployes()),
 				employeConsole.editerEmploye()
 				);
@@ -130,7 +130,7 @@ public class LigueConsole
 
 	private List<Employe> changerAdministrateur(final Ligue ligue)
 	{
-		return new List<>("Convetir employï¿½ en admin", "f", 
+		return new List<>("Convetir employé en admin", "f", 
 				() -> new ArrayList<>(ligue.getEmployes()),
 				(index, element) -> {element.estAdmin(ligue);}
 				);
