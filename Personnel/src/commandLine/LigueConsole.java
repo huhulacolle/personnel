@@ -132,7 +132,7 @@ public class LigueConsole
 	{
 		return new List<>("Convetir employé en admin", "f", 
 				() -> new ArrayList<>(ligue.getEmployes()),
-				(index, element) -> {element.estAdmin(ligue);}
+				(index, element) -> {ligue.setAdministrateur(element);;}
 				);
 	}		
 	
