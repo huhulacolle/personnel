@@ -103,7 +103,7 @@ public class LigueConsole
 								LocalDate.parse(getString("date d'arrivé  (AAAA-MM-JJ) : ")), 
 								LocalDate.parse(getString("date de départ (AAAA-MM-JJ) : ")), getString("password : "));
 					} catch (Exception e) {
-						
+						System.out.println("erreur de format dans l'insertion de la date");
 					}
 				}
 		);
@@ -122,7 +122,7 @@ public class LigueConsole
 	
 	private List<Employe> selectionnerEmploye(final Ligue ligue)
 	{
-		return new List<>("Selectionne un employe", "z", 
+		return new List<>("Selectionne un employe", "e", 
 				() -> new ArrayList<>(ligue.getEmployes()),
 				employeConsole.editerEmploye()
 				);
