@@ -1,6 +1,9 @@
 package personnel;
+import java.time.LocalDate;
+
 public class ErreurDateFin extends Exception{
-	public ErreurDateFin(){
-		System.out.println("La date de fin est inférieur à la date d'arrivée");
+	public ErreurDateFin(LocalDate dateFin, LocalDate dateDepart){
+		System.out.println("La date de fin est : " + dateFin +" inférieur à la date d'arrivée : "+ dateDepart );
+		
 	}
 }

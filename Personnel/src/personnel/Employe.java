@@ -129,7 +129,7 @@ public class Employe implements Serializable, Comparable<Employe>
 		if(dateFin == null)
 			this.dateDebut = datedebut;
 		else if(datedebut.isAfter(dateFin))
-			throw new ErreurDateDepart();
+			throw new ErreurDateDepart(datedebut, dateFin);
 		else
 			this.dateDebut = datedebut;
 	}
@@ -142,7 +142,7 @@ public class Employe implements Serializable, Comparable<Employe>
 		if(dateDebut ==null )
 			this.dateFin = datefin;
 		else if(datefin.isBefore(dateDebut))
-			throw new ErreurDateFin();
+			throw new ErreurDateFin(datefin, dateDebut);
 		else
 			this.dateFin = datefin;
 	}
