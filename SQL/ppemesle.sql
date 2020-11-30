@@ -14,21 +14,7 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
---
--- Structure de la table `administrateur`
---
 
-DROP TABLE IF EXISTS `administrateur`;
-CREATE TABLE IF NOT EXISTS `administrateur` (
-  `IdAdmin` int NOT NULL,
-  `IDLigue` int NOT NULL,
-  `IDEmploye` int NOT NULL,
-  PRIMARY KEY (`IdAdmin`),
-  KEY `IDLigue` (`IDLigue`),
-  KEY `IDEmploye` (`IDEmploye`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
 
 --
 -- Structure de la table `employe`
@@ -45,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `employe` (
   `MdpE` varchar(50) COLLATE utf8_bin DEFAULT NULL,
   `IDLigue` int NOT NULL,
   PRIMARY KEY (`IDEmploye`),
-  KEY `IDLigue` (`IDLigue`)
+  FOREIGN KEY (`IDLigue`) REFERENCES ligue(`IDLigue`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
