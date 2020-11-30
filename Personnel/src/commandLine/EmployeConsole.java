@@ -9,6 +9,7 @@ import commandLineMenus.Menu;
 import commandLineMenus.Option;
 import personnel.Employe;
 import personnel.ErreurDateDepart;
+import personnel.ErreurDateFin;
 
 public class EmployeConsole 
 {
@@ -50,8 +51,9 @@ public class EmployeConsole
 					try {
 						System.out.println("Date de départ actuel : " + employe.getDateFin());
 						employe.setDateFin((LocalDate)LocalDate.parse(getString("Nouvelle Date de départ : ")));
-					} catch (ErreurDateDepart e) {
-						System.out.println(e);
+					}catch (ErreurDateFin f)
+					{
+						changeDateFin(employe);
 					}
 					}
 			);
@@ -64,7 +66,7 @@ public class EmployeConsole
 						System.out.println("Date d'arrivée actuel : " + employe.getDateDebut());
 						employe.setDateDebut((LocalDate)LocalDate.parse(getString("Nouvelle Date d'arrivée :")));
 					} catch (ErreurDateDepart e) {
-						System.out.println(e);
+						changerDateDebut(employe);
 					}
 					}
 			);
