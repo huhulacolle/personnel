@@ -53,7 +53,7 @@ public class EmployeConsole
 						employe.setDateFin((LocalDate)LocalDate.parse(getString("Nouvelle Date de départ : ")));
 					}catch (ErreurDateFin f)
 					{
-						System.out.println(f);
+						changeDateFin(employe);
 					}
 					}
 			);
@@ -66,7 +66,7 @@ public class EmployeConsole
 						System.out.println("Date d'arrivée actuel : " + employe.getDateDebut());
 						employe.setDateDebut((LocalDate)LocalDate.parse(getString("Nouvelle Date d'arrivée :")));
 					} catch (ErreurDateDepart e) {
-						System.out.println(e);
+						changerDateDebut(employe);
 					}
 					}
 			);
