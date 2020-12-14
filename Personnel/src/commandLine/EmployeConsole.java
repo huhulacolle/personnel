@@ -49,11 +49,15 @@ public class EmployeConsole
 		return new Option("Changer Date départ", "f", 
 				() -> {
 					try {
-						System.out.println("Date de départ actuel : " + employe.getDateFin());
-						employe.setDateFin((LocalDate)LocalDate.parse(getString("Nouvelle Date de départ : ")));
-					}catch (ErreurDateFin f)
-					{
-						System.out.println(f);
+						try {
+							System.out.println("Date de départ actuel : " + employe.getDateFin());
+							employe.setDateFin((LocalDate)LocalDate.parse(getString("Nouvelle Date de départ : ")));
+						}catch (ErreurDateFin f)
+						{
+							System.out.println(f);
+						}
+					} catch (Exception e) {
+						System.out.println("erreur de format dans l'insertion de la date");
 					}
 					}
 			);
@@ -63,10 +67,14 @@ public class EmployeConsole
 		return new Option("Changer Date d'arrivée", "d", 
 				() -> {
 					try {
-						System.out.println("Date d'arrivée actuel : " + employe.getDateDebut());
-						employe.setDateDebut((LocalDate)LocalDate.parse(getString("Nouvelle Date d'arrivée :")));
-					} catch (ErreurDateDepart e) {
-						System.out.println(e);
+						try {
+							System.out.println("Date d'arrivée actuel : " + employe.getDateDebut());
+							employe.setDateDebut((LocalDate)LocalDate.parse(getString("Nouvelle Date d'arrivée :")));
+						} catch (ErreurDateDepart e) {
+							System.out.println(e);
+						}
+					} catch (Exception e) {
+						System.out.println("erreur de format dans l'insertion de la date");
 					}
 					}
 			);
