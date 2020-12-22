@@ -40,7 +40,7 @@ class testLigue
 	}
 
 	@Test
-	void addEmploye() throws SauvegardeImpossible
+	void addEmploye() throws SauvegardeImpossible, ErreurDateDepart, ErreurDateFin
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", LocalDate.parse("2020-09-09"), LocalDate.parse("2030-06-06"), "azerty"); 
@@ -48,7 +48,7 @@ class testLigue
 	}
 	
 	@Test
-	void delEmploye() throws SauvegardeImpossible 
+	void delEmploye() throws SauvegardeImpossible, ErreurDateDepart, ErreurDateFin 
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", LocalDate.parse("2020-01-08"), LocalDate.parse("2021-06-06"), "azerty"); 
@@ -57,7 +57,7 @@ class testLigue
 	}
 	
 	@Test
-	void modifEmploye() throws SauvegardeImpossible, ErreurDateDepart 
+	void modifEmploye() throws SauvegardeImpossible, ErreurDateDepart, ErreurDateFin 
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", LocalDate.parse("2010-09-09"), LocalDate.parse("2020-10-01"), "azerty"); 
@@ -70,7 +70,7 @@ class testLigue
 	}
 	
 	@Test
-	void changeAdmin() throws SauvegardeImpossible
+	void changeAdmin() throws SauvegardeImpossible, ErreurDateDepart, ErreurDateFin
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Flechettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com",LocalDate.parse("2010-09-09"), LocalDate.parse("2020-10-01"), "azerty");
@@ -79,7 +79,7 @@ class testLigue
 		
 	}
 	@Test
-	void changeAdmintoroot() throws SauvegardeImpossible
+	void changeAdmintoroot() throws SauvegardeImpossible, ErreurDateDepart, ErreurDateFin
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Flechettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com",LocalDate.parse("2010-09-09"), LocalDate.parse("2020-10-01"), "azerty");

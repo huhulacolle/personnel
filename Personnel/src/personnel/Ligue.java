@@ -109,21 +109,15 @@ public class Ligue implements Serializable, Comparable<Ligue>
 	 * @param dateFin 
 	 * @param dateDebut 
 	 * @return l'employé créé. 
+	 * @throws ErreurDateDepart 
+	 * @throws ErreurDateFin 
 	 */
 
-	public Employe addEmploye(String nom, String prenom, String mail, LocalDate dateDebut, LocalDate dateFin, String password)
+	public Employe addEmploye(String nom, String prenom, String mail, LocalDate dateDebut, LocalDate dateFin, String password) throws ErreurDateDepart, ErreurDateFin
 	{
 		Employe employe = new Employe(this.gestionPersonnel, this, nom, prenom, mail, password);
-		try {
 			employe.setDateDebut(dateDebut);
-		} catch (ErreurDateDepart e) {
-			System.out.println(e);
-		}
-		try {
 			employe.setDateFin(dateFin);
-		} catch (ErreurDateFin e) {
-			System.out.println(e);
-		}
 		employes.add(employe);
 		return employe;
 	}
